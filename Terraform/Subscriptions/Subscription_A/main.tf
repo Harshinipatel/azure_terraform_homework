@@ -101,12 +101,3 @@ output "vnet_name" {
 output "last_priority" {
   value = azurerm_network_security_rule.example3.priority
 }
-
-data "azurerm_network_security_group" "example" {
-  name                = azurerm_network_security_group.example.name
-  resource_group_name = azurerm_resource_group.example.name
-
-}
-output "nsg_rule" {
-  value = data.azurerm_network_security_group.example.security_rule[2].priority
-}
